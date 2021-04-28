@@ -1,0 +1,408 @@
+
+body{
+    background-color: #ddd
+}
+header i{
+    color: #000;
+}
+ 
+.logo-image{
+    max-width: 133px;
+    margin-top: 7px;
+}
+.modal-header .logo-image{
+    max-width: 133px;
+    margin-top: 7px;
+}
+.searchbox{
+    border: 2px solid #fca204;
+}
+.search{
+    width: 90px;
+    background-color: #FCA204;
+    border: 2px solid #FCA204;
+}
+.category_second ul li a{
+    font-size: 12px;
+    color: #7E7E7E;
+}
+/*.category_second ul li a i{
+    margin-left: 210px;
+}*/
+.bottom-header .menu-icon{
+    border-left: 1px solid #ddd;
+    border-right: 2px solid #ddd;
+    padding: 11px;
+}
+.second-header-right-section{
+    border-right: 1px solid #ddd;
+}
+.all-shop{
+    text-decoration: none;
+color: white;
+font-weight: 400;
+}
+.all_shop_div{
+    border-right: 1px solid #9c9a9a;
+    border-left: 1px solid #9c9a9a;
+}
+.toggle_div{
+    text-align: center;
+    border-left: 1px solid #9c9a9a;
+    border-right: 1px solid #9c9a9a;
+}
+
+.drawer-menu{
+    position: absolute;
+    width: 25%;
+    top: -29px;
+    left: -4px;
+}
+
+.drawer-menu ul{list-style: none}
+ .main-desktop-menu{list-style-type: none;position: relative;}
+ 
+ .main-desktop-menu li  a {    
+   display: block;
+    background-color: green;
+    width: 300px;
+    padding: 14px 13px;
+    margin-left: -20px;
+    color: white !important;
+    border-bottom: 1px solid #ddd;
+}
+.main-desktop-menu li  i{  
+     position: absolute;
+    right: -11px;
+    margin-top: -35px;
+     
+    color: white;
+}
+.main-desktop-menu li ul {
+  display: none;
+  position: absolute;
+  margin-left: 255px;  
+  z-index: 10;
+  list-style: none;
+  top: 0px;
+  
+} 
+.main-desktop-menu li:hover.main-desktop-menu li ul {
+  display: block; 
+  
+}
+.main-desktop-menu li ul li a {
+    
+  background-color: green;
+  width: 250px;
+  padding: 14px 13px;
+  margin-left: -20px;
+  color: white !important;
+  border-bottom: 1px solid #ddd;
+  
+}
+
+.desktop-menu ul {
+  padding:0;
+  position:absolute;
+  list-style-type:none;
+  margin:8px 0 0;
+  background-color:#27c34b
+ }
+ .desktop-menu ul li span.first-font-asomeicon {
+  position:absolute;
+  left:6px;
+  color:#fff
+ }
+ .headerMiddleSecton {
+  padding:8px 0
+ }
+ .desktop-menu ul li a {
+  margin-top: -3px;
+  width: 301px;
+  display: block;
+  color: #000;
+  padding: 7px 35px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 400;
+  border-bottom: 1px solid #ddd;
+ }
+ .desktop-menu ul li>a:hover {
+  color:#fff;
+  background-color:#e91b2a
+ }
+ .desktop-menu ul li .sub-menu-ul li>a:hover {
+  color:#000;
+  background-color:#27c34b
+ }
+ .desktop-menu ul li .right-main-menu-icon {
+  position:absolute;
+  right:10px;
+  margin-top:-20px;
+  color:#fff
+ }
+ .desktop-menu ul li .sub-menu-ul li .right-main-menu-icon {
+  position:absolute;
+  right:10px;
+  margin-top:-20px;
+  color:#000
+ }
+ .desktop-menu ul li:hover .sub-menu-ul {
+  display:block
+ }
+ .desktop-menu ul li .sub-menu-ul {
+  position:absolute;
+  left:275px;
+  margin-top:-21px;
+  width:275px;
+  z-index:999999;
+  background-color:#fff;
+  height:403px;
+  display:none
+ }
+ .desktop-menu ul li .sub-menu-ul a {
+  color:#000
+ }
+ .desktop-menu ul li .sub-menu-ul .sub-sub-menu-ul {
+  position:absolute;
+  left:253px;
+  margin-top:-24px;
+  width:261px;
+  z-index:999999;
+  background-color:#27c34b;
+  height:300px;
+  display:none
+ }
+ .desktop-menu ul li .sub-menu-ul li:hover .sub-sub-menu-ul {
+  display:block
+ }
+
+ 
+.slider_part{
+    margin-top: 25px;
+}
+.slider img{
+    height: 375px;
+}
+ 
+.category_text{
+    background-color: #a2a2a2;
+    line-height: 45px;
+    font-weight: 600;
+    text-align: -webkit-center;
+    border-radius: 7px 7px 0px 0px;
+    margin: 0px;
+}
+ 
+ 
+.banner img{
+    height: 120px;
+    margin-bottom: 10px
+}
+
+.card .taka{
+    font-weight: 600;
+    display: inline;
+}
+.card .discount{
+    display: inline;
+    color: #bdb8b8;
+    font-weight: 600;
+    text-decoration: line-through;
+}
+  
+
+.box > img {
+  width: 100%;
+  height: calc(100% - 0vh);
+  object-fit: cover; 
+  transition: .5s;
+  padding: 10px;
+}
+
+  
+.footer h3{
+    color: #8F908E;
+    font-weight: 600;
+    font-size: 23px;
+}
+.footer ul li a{
+    color: #8F908E;
+}
+.footer ul{
+    padding-left: 0rem;
+}
+.footer p{
+    color: #8F908E;
+}
+.footer i{
+    color: #8F908E;
+}
+span{
+  font-size: 14px;
+  font-weight: 600;
+}
+ 
+    .product_box{
+        margin-right: 40px
+    }
+@media(min-width: 1122px){
+    
+    .product_box{
+        margin-right: 40px
+    }
+}
+@media(max-width: 1121px) and (min-width: 972px){
+    
+    .product_box{
+        margin-right: 30px
+    }
+}
+@media(max-width: 971px) and (min-width: 768px){
+     
+    .product_box{
+        margin-right: 15px
+    }
+}
+@media(max-width: 470px) and (min-width: 450px){
+    
+}
+@media(max-width: 449px) and (min-width: 380px){
+    
+}
+@media(max-width: 379px) and (min-width: 350px){
+    
+}
+.textnumber p a{
+    color: #000;
+    text-decoration: none;
+}
+.modal .modal-dialog-aside{
+    width: 350px;
+    max-width:80%; height: 100%; margin:0;
+    transform: translate(0); transition: transform .2s;
+}
+
+
+.modal .modal-dialog-aside .modal-content{  height: inherit; border:0; border-radius: 0;}
+.modal .modal-dialog-aside .modal-content .modal-body{ overflow-y: auto }
+.modal.fixed-left .modal-dialog-aside{ margin-left:auto;  transform: translateX(100%); }
+.modal.fixed-right .modal-dialog-aside{ margin-right:auto; transform: translateX(-100%); }
+
+.modal.show .modal-dialog-aside{ transform: translateX(0);  }
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 2.5em;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Nav tabs*/
+
+
+.tabs-nav li {
+  display: inline-block;
+  color: #fff;
+  margin-right: 5px;
+}
+
+
+/* Active tab */
+.tabs-nav li.active a{
+  color: #fff;
+  background: #0D6EFD
+  font-weight: 600;
+}
+
+.tabs-nav li.active {
+  background: #FFF;
+  color: #fff;
+  background: #0D6EFD
+}
+
+
+/* Tab content */
+
+.tabs-content {
+  margin-top: -1px;
+  overflow: hidden;
+}
+
+.tabs-content IMG {
+  margin-right: 10px;
+}
+/* Hide all but first content div */
+
+.tabs-content div:not(:first-child) {
+  display: none;
+}
+ 
+@media(max-width: 998px){
+  .all_shop_div{
+    display: none;
+  }
+}
+ .rating {
+    --star-size: 2;  /* use CSS variables to calculate dependent dimensions later */
+    padding: 0;  /* to prevent flicker when mousing over padding */
+    border: none;  /* to prevent flicker when mousing over border */
+    unicode-bidi: bidi-override; direction: rtl;  /* for CSS-only style change on hover */
+    text-align: left;  /* revert the RTL direction */
+    user-select: none;  /* disable mouse/touch selection */
+    font-size: 3em;  /* fallback - IE doesn't support CSS variables */
+    font-size: calc(var(--star-size) * 1em);  /* because `var(--star-size)em` would be too good to be true */
+    cursor: pointer;
+    /* disable touch feedback on cursor: pointer - http://stackoverflow.com/q/25704650/1269037 */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    margin-bottom: 1em;
+  }
+  /* the stars */
+  .rating > label {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;  /* magic number to overlap the radio buttons on top of the stars */
+    width: calc(var(--star-size) / 3 * 1.1em);
+  }
+  .rating > *:hover,
+  .rating > *:hover ~ label,
+  .rating:not(:hover) > input:checked ~ label {
+    color: transparent;
+    cursor: inherit;
+  }
+  .rating > *:hover:before,
+  .rating > *:hover ~ label:before,
+  .rating:not(:hover) > input:checked ~ label:before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    color: black;
+  }
+  .rating > input {
+
+    transform: scale(3);  /* make the radio buttons big; they don't inherit font-size */
+    transform: scale(var(--star-size));
+    /* the magic numbers below correlate with the font-size */
+    top: -0.5em;  /* margin-top doesn't work */
+    top: calc(var(--star-size) / 6 * -1em);
+    margin-left: -2.5em;  /* overlap the radio buttons exactly under the stars */
+    margin-left: calc(var(--star-size) / 6 * -5em);
+    z-index: 2;  /* bring the button above the stars so it captures touches/clicks */
+    opacity: 0;  /* comment to see where the radio buttons are */
+    font-size: initial; /* reset to default */
+  }
+  form.amp-form-submit-error [submit-error] {
+    color: red;
+  }

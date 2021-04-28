@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <title>Welcome to Rakib & Zamal Shop</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+            type="text/javascript"></script>
+
+
+
+
+
+</head>
+<body>
+
+
+<header class="bg-white">
+    <div class="container-fluid desktop-header d-none d-lg-block d-xl-block d-xxl-block">
+        <div class="row px-5 pt-3 pb-3" style="border-bottom: 1px solid #9c9a9a;">
+            <div class="col-md-2 col-lg-2 col-xl-2 col-xxl-2 d-none d-lg-block d-xl-block d-xxl-block">
+                <img class="img-fluid logo-image" src="https://bdeshishop.com/_nuxt/img/Logo-gif.07de684.gif">
+
+            </div>
+            <div class="col-8 col-lg-8 col-xl-8 col-xxl-8">
+                <div class="input-group">
+                    <input type="text" class="form-control searchbox" placeholder="Search Product">
+                    <div class="input-group-append">
+                        <button class="btn btn-secondary search" type="button">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-lg-2 col-xl-2 col-xxl-2 d-none d-lg-block d-xl-block d-xxl-block">
+                <div class="d-flex justify-content-center mt-2">
+                    <a href="" class="me-3"> <i class="fs-5 fw-bold far fa-heart"></i> </a>
+                    <a href="" class="me-3"> <i class="fs-5 fw-bold far fa-cart-plus"></i></a>
+                    <a href="" class="me-3"> <i class="fs-5 fw-bold far fa-user"></i></a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container-fluid mobile-header d-block d-md-block d-sm-block d-lg-none d-xl-none ">
+        <div class="row p-2 " style="border-bottom: 1px solid #9c9a9a;">
+
+            <div class="col-1">
+
+                <i class="fa fa-bars"></i>
+
+            </div>
+            <div class="col-11">
+                <div class="input-group">
+                    <input type="text" class="form-control searchbox" placeholder="Search Product">
+                    <div class="input-group-append">
+                        <button class="btn btn-secondary search" type="button">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container-fluid d-none d-lg-block d-xl-block d-xxl-block" style="background-color: black;height: 55px;">
+        <div class="row px-2 pt-3 pb-3 col-md-12">
+            <div class="col-md-3 col-sm-2 col-lg-3  col-xl-3 col-xxl-3  col-3 ">
+                <div class="d-block text-white"
+                     style="cursor: pointer;
+         height: 56px;
+         background-color: #E91B2A;
+         margin-top: -17px;
+         width: 300px;
+         padding: 16px 5px;">
+                    <div class="d-inline p-2 ms-4">
+                        <i class="fa fa-bars fs-6 fw-bold text-white"></i>
+                    </div>
+                    <div class="d-inline MenuCategory text-xl text-center ps-2 p-2 text-uppercase fs-6 fw-bold">
+                        Categories
+                    </div>
+                    <div class="d-inline p-2 " style="float:right;margin-top:-8px;margin-right:21px">
+                        <i class="fa fa-angle-down fs-6 fw-bold text-white"></i>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-9 col-sm-10 col-xl-9 col-xxl-9 col-lg-9 ">
+                <a href="" class="ms-5 mt-5 all-shop"> All Product</a>
+                <a href="" class="ms-5 mt-5 all-shop"> All Shops</a>
+                <a href="" class="ms-5 mt-5 all-shop"> Brand</a>
+                <a href="" class="ms-5 mt-5 all-shop"> Track My Order</a>
+                <a href="" class="ms-5 mt-5 all-shop"> FAQ</a>
+                <a href="" class="ms-5 mt-5 all-shop"> Vendor</a>
+                <a href="" class="ms-5 mt-5 all-shop"> Help</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container-fluid ">
+    <div class="row px-2 ">
+        <div class="col-md-3 desktop-menu d-none  d-lg-block d-xl-bloc d-xxl-block">
+
+            <ul class="">
+
+                <li class=""><a
+                        href="/category/toner-originals/">Toner Original<!-- -->   </a></li>
+                        <li class=""><a
+                          href="/category/printers/">Printer<!-- -->   </a></li>
+                  <li class=""><a
+                          href="/category/toner-originals/">Toner Original<!-- -->   </a></li>
+
+                <li class=""><a
+                        href="/category/printers/">Printer<!-- -->   </a></li>
+                <li class=""><a
+                        href="/category/toner-originals/">Toner Original<!-- -->   </a></li>
+                <li class=""><a
+                        href="/category/printers/">Printer<!-- -->   </a></li>
+                <li class=""><a
+                        href="/category/toner-originals/">Toner Original<!-- -->   </a></li>
+                <li class=""><a
+                        href="/category/printers/">Printer<!-- -->   </a></li>
+                <li class=""><a
+                        href="/category/toner-originals/">Toner Original<!-- -->   </a></li>
+                <li class=""><a
+                        href="/category/printers/">Printer<!-- -->   </a></li>
+                <li class=""><a
+                        href="/category/toner-originals/">Toner Original<!-- -->   </a></li>
+                <li class=""><a
+                        href="/category/printers/">Printer<!-- -->   </a></li>
+                <li class=""><a
+                        href="/category/toner-originals/">Toner Original<!-- -->   </a></li>
+                <li class=""><a
+                        href="/category/printers/">Printer<!-- -->   </a></li>
+                <li class=""><a
+                        href="/category/toner-originals/">Toner Original<!-- -->   </a></li>
+                <li class=""><a
+                        href="/category/printers/">Printer<!-- -->   </a></li>
+                <li class=""><a
+                        href="/category/toner-originals/">Toner Original<!-- -->   </a></li>
+                <li class=""><a
+                        href="/category/printers/">Printer<!-- -->   </a></li>
+                <li class=""><a
+                        href="/category/toner-originals/">Toner Original<!-- -->   </a></li>
+                <li class=""><a
+                        href="/category/printers/">Printer<!-- -->   </a></li>
+
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-12 col-lg-12 col-xl-12">
+            <div class="slider mt-3" >
+                <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                                aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="10000">
+                            <img src="https://smartslider3.com/wp-content/uploads/slider132/image-slider-with-thumbnail1.jpeg"
+                                 class="d-block w-100 img" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>First slide label</h5>
+                                <p>Some representative placeholder content for the first slide.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="2000">
+                            <img src="https://smartslider3.com/wp-content/uploads/slider132/image-slider-with-thumbnail2.jpeg"
+                                 class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Second slide label</h5>
+                                <p>Some representative placeholder content for the second slide.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://i.ytimg.com/vi/xZJcJ6QRvfY/maxresdefault.jpg" class="d-block w-100"
+                                 alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Third slide label</h5>
+                                <p>Some representative placeholder content for the third slide.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+
+           </div>
+
+
+            <div class="col-12  col-lg-12 col-xl-12">
+                <div class="row">
+
+
+                <div class="col-lg-3 col-xl-3 col-sm-6 col-md-2 col-6 p-3">
+                    <div class="card">
+                        <img    src="https://4.imimg.com/data4/VB/BR/MY-26518534/mens-plain-shirt-500x500.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <p class="text-center">Original Race Mini Air</p>
+                            <p class="text-center">৳1250  <del>৳1950 </del></p>
+                         </div>
+
+
+                    </div>
+
+                   </div>
+
+                    <div class="col-lg-3 col-xl-3 col-sm-6 col-md-2 col-6 p-3">
+                        <div class="card">
+                            <img    src="https://4.imimg.com/data4/VB/BR/MY-26518534/mens-plain-shirt-500x500.jpg" class="card-img-top" alt="..." />
+                            <div class="card-body">
+                                <p class="text-center">Original Race Mini Air</p>
+                                <p class="text-center">৳1250  <del>৳1950 </del></p>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-3 col-xl-3 col-sm-6 col-md-2 col-6 p-3">
+                        <div class="card">
+                            <img    src="https://4.imimg.com/data4/VB/BR/MY-26518534/mens-plain-shirt-500x500.jpg" class="card-img-top" alt="..." />
+                            <div class="card-body">
+                                <p class="text-center">Original Race Mini Air</p>
+                                <p class="text-center">৳1250  <del>৳1950 </del></p>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-3 col-xl-3 col-sm-6 col-md-2 col-6 p-3">
+                        <div class="card">
+                            <img    src="https://4.imimg.com/data4/VB/BR/MY-26518534/mens-plain-shirt-500x500.jpg" class="card-img-top" alt="..." />
+                            <div class="card-body">
+                                <p class="text-center">Original Race Mini Air</p>
+                                <p class="text-center">৳1250  <del>৳1950 </del></p>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+
+
+
+                </div>
+        </div>
+
+
+    </div>
+</div>
+
+</div>
+</div>
+<div class="container-fluid ">
+    <div class="row px-2">
+
+        <img class="img-fluid w-100 h-10" style="    height: 254px;
+"
+             src="https://png.pngtree.com/thumb_back/fw800/back_our/20190620/ourmid/pngtree-taobao-clothing-home-banner-background-image_152959.jpg">
+
+        <div class="col-md-12 mt-3 mb-2" style="margin-bottom: 30px">
+            <h4 style="display: inline;">Category Name</h4>
+            <button style="float: right; font-weight: 600; color: #fff" type="button" class="btn btn-warning">View All
+            </button>
+        </div>
+
+
+        <div class="col-md-2 col-lg-2 col-sm-6 col-6 p-1 ">
+            <div class="card">
+                <div class="box">
+                    <img class="img-fluid"
+                         src="https://4.imimg.com/data4/VB/BR/MY-26518534/mens-plain-shirt-500x500.jpg" alt="...">
+                </div>
+                <div class="card-body">
+                    <p class="card-text" style="color: #000; font-weight: 600">Baby walker multi-function child starter
+                        learn to drive</p>
+                    <div class="text-center mb-2">
+                        <p class="card-text discount">$ 100</p>
+                        <p class="card-text taka">$ 600</p>
+                    </div>
+                    <a href="#" class="btn btn-warning" style="font-weight: 600; margin-left: 21%; color: #fff;">Buy
+                        Now</a>
+                    <a href="#" class="btn btn-danger"
+                       style="font-weight: 600; margin-left: 15%; color: #fff; margin-top: 5px">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-2 col-lg-2 col-sm-6 col-6 p-1 ">
+            <div class="card">
+                <div class="box">
+                    <img class="img-fluid"
+                         src="https://4.imimg.com/data4/VB/BR/MY-26518534/mens-plain-shirt-500x500.jpg" alt="...">
+                </div>
+                <div class="card-body">
+                    <p class="card-text" style="color: #000; font-weight: 600">Baby walker multi-function child starter
+                        learn to drive</p>
+                    <div class="text-center mb-2">
+                        <p class="card-text discount">$ 100</p>
+                        <p class="card-text taka">$ 600</p>
+                    </div>
+                    <a href="#" class="btn btn-warning" style="font-weight: 600; margin-left: 21%; color: #fff;">Buy
+                        Now</a>
+                    <a href="#" class="btn btn-danger"
+                       style="font-weight: 600; margin-left: 15%; color: #fff; margin-top: 5px">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-sm-6 col-6 p-1 ">
+            <div class="card">
+                <div class="box">
+                    <img class="img-fluid"
+                         src="https://4.imimg.com/data4/VB/BR/MY-26518534/mens-plain-shirt-500x500.jpg" alt="...">
+                </div>
+                <div class="card-body">
+                    <p class="card-text" style="color: #000; font-weight: 600">Baby walker multi-function child starter
+                        learn to drive</p>
+                    <div class="text-center mb-2">
+                        <p class="card-text discount">$ 100</p>
+                        <p class="card-text taka">$ 600</p>
+                    </div>
+                    <a href="#" class="btn btn-warning" style="font-weight: 600; margin-left: 21%; color: #fff;">Buy
+                        Now</a>
+                    <a href="#" class="btn btn-danger"
+                       style="font-weight: 600; margin-left: 15%; color: #fff; margin-top: 5px">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-sm-6 col-6 p-1 ">
+            <div class="card">
+                <div class="box">
+                    <img class="img-fluid"
+                         src="https://4.imimg.com/data4/VB/BR/MY-26518534/mens-plain-shirt-500x500.jpg" alt="...">
+                </div>
+                <div class="card-body">
+                    <p class="card-text" style="color: #000; font-weight: 600">Baby walker multi-function child starter
+                        learn to drive</p>
+                    <div class="text-center mb-2">
+                        <p class="card-text discount">$ 100</p>
+                        <p class="card-text taka">$ 600</p>
+                    </div>
+                    <a href="#" class="btn btn-warning" style="font-weight: 600; margin-left: 21%; color: #fff;">Buy
+                        Now</a>
+                    <a href="#" class="btn btn-danger"
+                       style="font-weight: 600; margin-left: 15%; color: #fff; margin-top: 5px">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-sm-6 col-6 p-1 ">
+            <div class="card">
+                <div class="box">
+                    <img class="img-fluid"
+                         src="https://4.imimg.com/data4/VB/BR/MY-26518534/mens-plain-shirt-500x500.jpg" alt="...">
+                </div>
+                <div class="card-body">
+                    <p class="card-text" style="color: #000; font-weight: 600">Baby walker multi-function child starter
+                        learn to drive</p>
+                    <div class="text-center mb-2">
+                        <p class="card-text discount">$ 100</p>
+                        <p class="card-text taka">$ 600</p>
+                    </div>
+                    <a href="#" class="btn btn-warning" style="font-weight: 600; margin-left: 21%; color: #fff;">Buy
+                        Now</a>
+                    <a href="#" class="btn btn-danger"
+                       style="font-weight: 600; margin-left: 15%; color: #fff; margin-top: 5px">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-sm-6 col-6 p-1 ">
+            <div class="card">
+                <div class="box">
+                    <img class="img-fluid"
+                         src="https://4.imimg.com/data4/VB/BR/MY-26518534/mens-plain-shirt-500x500.jpg" alt="...">
+                </div>
+                <div class="card-body">
+                    <p class="card-text" style="color: #000; font-weight: 600">Baby walker multi-function child starter
+                        learn to drive</p>
+                    <div class="text-center mb-2">
+                        <p class="card-text discount">$ 100</p>
+                        <p class="card-text taka">$ 600</p>
+                    </div>
+                    <a href="#" class="btn btn-warning" style="font-weight: 600; margin-left: 21%; color: #fff;">Buy
+                        Now</a>
+                    <a href="#" class="btn btn-danger"
+                       style="font-weight: 600; margin-left: 15%; color: #fff; margin-top: 5px">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-sm-6 col-6 p-1 ">
+            <div class="card">
+                <div class="box">
+                    <img class="img-fluid"
+                         src="https://4.imimg.com/data4/VB/BR/MY-26518534/mens-plain-shirt-500x500.jpg" alt="...">
+                </div>
+                <div class="card-body">
+                    <p class="card-text" style="color: #000; font-weight: 600">Baby walker multi-function child starter
+                        learn to drive</p>
+                    <div class="text-center mb-2">
+                        <p class="card-text discount">$ 100</p>
+                        <p class="card-text taka">$ 600</p>
+                    </div>
+                    <a href="#" class="btn btn-warning" style="font-weight: 600; margin-left: 21%; color: #fff;">Buy
+                        Now</a>
+                    <a href="#" class="btn btn-danger"
+                       style="font-weight: 600; margin-left: 15%; color: #fff; margin-top: 5px">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-sm-6 col-6 p-1 ">
+            <div class="card">
+                <div class="box">
+                    <img class="img-fluid"
+                         src="https://4.imimg.com/data4/VB/BR/MY-26518534/mens-plain-shirt-500x500.jpg" alt="...">
+                </div>
+                <div class="card-body">
+                    <p class="card-text" style="color: #000; font-weight: 600">Baby walker multi-function child starter
+                        learn to drive</p>
+                    <div class="text-center mb-2">
+                        <p class="card-text discount">$ 100</p>
+                        <p class="card-text taka">$ 600</p>
+                    </div>
+                    <a href="#" class="btn btn-warning" style="font-weight: 600; margin-left: 21%; color: #fff;">Buy
+                        Now</a>
+                    <a href="#" class="btn btn-danger"
+                       style="font-weight: 600; margin-left: 15%; color: #fff; margin-top: 5px">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-sm-6 col-6 p-1 ">
+            <div class="card">
+                <div class="box">
+                    <img class="img-fluid"
+                         src="https://4.imimg.com/data4/VB/BR/MY-26518534/mens-plain-shirt-500x500.jpg" alt="...">
+                </div>
+                <div class="card-body">
+                    <p class="card-text" style="color: #000; font-weight: 600">Baby walker multi-function child starter
+                        learn to drive</p>
+                    <div class="text-center mb-2">
+                        <p class="card-text discount">$ 100</p>
+                        <p class="card-text taka">$ 600</p>
+                    </div>
+                    <a href="#" class="btn btn-warning" style="font-weight: 600; margin-left: 21%; color: #fff;">Buy
+                        Now</a>
+                    <a href="#" class="btn btn-danger"
+                       style="font-weight: 600; margin-left: 15%; color: #fff; margin-top: 5px">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-sm-6 col-6 p-1 ">
+            <div class="card">
+                <div class="box">
+                    <img class="img-fluid"
+                         src="https://4.imimg.com/data4/VB/BR/MY-26518534/mens-plain-shirt-500x500.jpg" alt="...">
+                </div>
+                <div class="card-body">
+                    <p class="card-text" style="color: #000; font-weight: 600">Baby walker multi-function child starter
+                        learn to drive</p>
+                    <div class="text-center mb-2">
+                        <p class="card-text discount">$ 100</p>
+                        <p class="card-text taka">$ 600</p>
+                    </div>
+                    <a href="#" class="btn btn-warning" style="font-weight: 600; margin-left: 21%; color: #fff;">Buy
+                        Now</a>
+                    <a href="#" class="btn btn-danger"
+                       style="font-weight: 600; margin-left: 15%; color: #fff; margin-top: 5px">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-sm-6 col-6 p-1 ">
+            <div class="card">
+                <div class="box">
+                    <img class="img-fluid"
+                         src="https://4.imimg.com/data4/VB/BR/MY-26518534/mens-plain-shirt-500x500.jpg" alt="...">
+                </div>
+                <div class="card-body">
+                    <p class="card-text" style="color: #000; font-weight: 600">Baby walker multi-function child starter
+                        learn to drive</p>
+                    <div class="text-center mb-2">
+                        <p class="card-text discount">$ 100</p>
+                        <p class="card-text taka">$ 600</p>
+                    </div>
+                    <a href="#" class="btn btn-warning" style="font-weight: 600; margin-left: 21%; color: #fff;">Buy
+                        Now</a>
+                    <a href="#" class="btn btn-danger"
+                       style="font-weight: 600; margin-left: 15%; color: #fff; margin-top: 5px">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-sm-6 col-6 p-1 ">
+            <div class="card">
+                <div class="box">
+                    <img class="img-fluid"
+                         src="https://4.imimg.com/data4/VB/BR/MY-26518534/mens-plain-shirt-500x500.jpg" alt="...">
+                </div>
+                <div class="card-body">
+                    <p class="card-text" style="color: #000; font-weight: 600">Baby walker multi-function child starter
+                        learn to drive</p>
+                    <div class="text-center mb-2">
+                        <p class="card-text discount">$ 100</p>
+                        <p class="card-text taka">$ 600</p>
+                    </div>
+                    <a href="#" class="btn btn-warning" style="font-weight: 600; margin-left: 21%; color: #fff;">Buy
+                        Now</a>
+                    <a href="#" class="btn btn-danger"
+                       style="font-weight: 600; margin-left: 15%; color: #fff; margin-top: 5px">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+</div>
+
+<div class="footer">
+    <div class="col-md-12" style="background-color: #333E4F">
+        <br>
+        <div class=" " style="border-bottom: 1px solid #dddddd">
+            <div class="row" style="padding-left: 20px;padding-top: 20px;">
+                <div class="col-md-2 col-lg-2 col-xl-2 col-xll-2">
+                    <h3>Policy</h3>
+                    <br>
+                    <ul>
+                        <li class="mb-2"><a href="#">About</a></li>
+                        <li class="mb-2"><a href="#">Terms &amp; Conditions</a></li>
+                        <li class="mb-2"><a href="#">Refund and Return</a></li>
+                        <li class="mb-2"><a href="#">Cookie Policy</a></li>
+                        <li class="mb-2"><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-8 col-lg-8 col-xl-8 col-xll-8">
+                    <h3>Contact Us</h3>
+                    <br>
+                    <p class="mb-2">House: 35, Gazi Vobon, (Near sundorbon currier service), Boundary Road-2, (Foll
+                        Potti), Mirpur-10, Dhaka.</p>
+                    <p class="mb-2">Email: naimnaz@gmail.com</p>
+                    <p>Contact no: 01708519648 01822844438 01924720823 01929220022</p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 col-xll-2">
+                    <h3>Get in Touch</h3>
+                    <br>
+                    <div class="d-flex justify-content-center">
+                        <a href="" class="me-5"> <i class="fw-bold fab fa-facebook-f"></i></a>
+                        <a href=""> <i class="fw-bold fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12" style="border: 1px solid #ddd"></div>
+        <div class="col-md-12 mt-4">
+            <p class="text-center">© 2021 jibonpata.com. All rights reserved.</p>
+        </div>
+        <br>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>
