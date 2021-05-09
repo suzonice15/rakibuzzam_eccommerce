@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::post('/askQuestionsFromWebsite', 'HomeController@askQuestionsFromWebsite');
+Route::get('/shops', 'HomeController@allShop');
 Route::get('/allQuestions/{id}', 'HomeController@allQuestions');
 Route::get('/affilates/products', 'HomeController@affilates_products');
 Route::get('/', 'HomeController@index');

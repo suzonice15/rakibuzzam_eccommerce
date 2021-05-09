@@ -1,80 +1,100 @@
-@extends('website.master')
-@section('mainContent')
-<style type="text/css">
-    @media print {
-  body * {
-    visibility: hidden;
-  }
-  #printInvoice, #printInvoice * {
-    visibility: visible;
-  }
-  #notPrint, #notPrint *{
-    visibility: hidden;
-  }
-  #printInvoice {
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
+<?php $__env->startSection('mainContent'); ?>
 
-}
+    <style type="text/css">
+        @media  print
+        {
+            body * { visibility: hidden; }
+            .noprint_section  *{ display: none; }
+            .tank_you_print * { visibility: visible;margin-right: 50px }
+
+        }
+    </style>
+<style>
+
+
+    .home_print_mobile_class{
+
+    }
+    .thank_you_class{
+        font-size: 20px;
+        background-color: green;
+        width: 66%;
+        height: auto;
+        margin-top: 28px;
+        color: white;
+        padding: 8px 8px;
+        margin-left: 193px;
+    }
+
+    @media (max-width: 576px) {
+        .thank_you_class{
+            font-size: 20px;
+            background-color:
+                green;
+            width: 80%;
+            height: auto;
+            margin-top: 28px;
+            color:
+                white;
+            padding: 8px 8px;
+        }
+        .order_tank_you_class{
+            width: 107%;
+        }
+    }
 </style>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-sm-3">
-
-            </div>
-            <div class="col-sm-6">
 
 
-                <div class="breadcrumb">
-                    <div class="container">
-                        <div class="breadcrumb-inner">
-                            <ul class="list-inline list-unstyled">
-                                <li><a href="{{url('/')}}">Home</a></li>
-                                <li style="display: initial;" class='active'>অর্ডার ট্র্যাক করুন</li>
-                            </ul>
-                        </div>
+
+<div class="container tank_you_print" style="background-color: white;">
+    <h2  style="background-color:green" class="text-center  col-12 thank_you_class"
+    >Thank You. Your order has been received</h2>
+    <div class="row  order_tank_you_class">
+
+
+        <?php
+        if ((isset($order))) { ?>
+
+<div class="col-md-2">
+</div>
+        <div class="col-md-8 col-12">
+
+                <div class="card panel-primary">
+                    <div class="card-heading text-start ms-5"><b>
+                            Order Details
+                        </b>
                     </div>
-                </div>
-                <article class="txt"><p
-                        style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: SolaimanLipi, Helvetica, Verdana, sans-serif !important; text-align: justify !important; color: black !important;">
-                        ১। পণ্যের ডেলিভারী আপডেট পেতে আপনার Mobile Number নাম্বার দিয়ে অর্ডার ট্র্যাক করুন।</p>
-                    <p style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: SolaimanLipi, Helvetica, Verdana, sans-serif !important; text-align: justify !important; color: black !important;">
-                        ২। আপনার অর্ডার করা পণ্যের ডেলিভারীর বর্তমান অবস্থা জানতে নিম্নের “টেক্সট বক্স” এ Mobile নাম্বার
-                        টি প্রদান করুন এবং “ট্র্যাক অর্ডার” বাটনে ক্লিক করুন।</p>
-                    <hr class="break break30">
-                    <form method="post" action="{{ url('/track-your-order') }}">
-                        @csrf
-                        <div class="row row5" style="margin-left: -15px;height: 55px;">
-                            <div class="col-sm-8 col-xs-12">
-                                <div class="form-group">
-                                    <input required type="text"
-                                           style="background-color: #ddd;border-color: green;border-radius: 13px"
-                                           class="form-control" name="mobile"
-                                           placeholder="Enter Mobile Number"></div>
-                            </div>
-                            <div class="col-sm-4 col-xs-12">
-                                <div class="form-group">
-                                    <button type="submit" id="trackOrder" class="btn btn-success form-control">Send
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </article>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-3">
-            </div>
-          <?php if(isset($order)) { ?>
-            <div class="col-md-6" id="printInvoice">
-                <div class="panel-body">
+                    <div class="card-body">
+
+                    <div class="row">
+
+                        <div class="col-md-5 col-sm-12">
+                            <a tyle="
+    margin-left: 15px;
+" href="<?php echo e(url('/')); ?>" class="btn btn-info  noprint_section d-print-none text-white">
+                                <span class="fa fa-backward"></span> BACK TO HOME
+                            </a>
+                        </div>
+
+                        <div class="col-md-7 col-sm-12">
+
+
+                            <button  style="
+    margin-left: 204px;
+" onclick="window.print()" class="btn btn-success print noprint_section  d-print-none"
+                            ><i
+                                    class="fa fa-download"></i>  DOWNLOAD
+                            </button>
+
+                        </div>
+
+
+                </div>
+                <div class="card-body">
                     <div class="cart-info">
 
-                        <table class="table table-striped table-bordered">
+                        <table class="table  table-bordered">
                             <tbody>
                             <tr>
                                 <td style="75%">
@@ -82,14 +102,6 @@
                                 </td>
                                 <td class="text-right" style="width:50%">
                                     <span class="bold totalamout"><b><?php echo $order->order_id; ?></b></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="75%">
-                                    <span class="extra bold totalamout"><b>Order Status</b></span>
-                                </td>
-                                <td class="text-right" style="width:50%">
-                                    <span class="bold totalamout"><b><?php echo $order->order_status; ?></b></span>
                                 </td>
                             </tr>
                             <tr>
@@ -133,14 +145,13 @@
                         </table>
 
 
-                        <div style="overflow-x: scroll;">
+                        <div>
                             <table class="table table-striped table-bordered">
                                 <tr>
-
+                                    <th class="name" width="1%">Sl</th>
                                     <th class="name" width="40%">Products</th>
                                     <th class="name" width="10%">Product Code</th>
-                                    <th class="name" width="1%">Qnt</th>
-                                    <th class="name" width="20%">Price</th>
+
                                     <th class="name" width="25%">Sub-Total</th>
                                 </tr>
                                 <?php
@@ -161,22 +172,24 @@
                                 $name=$product->product_name;
                                 ?>
                                 <tr>
-
+                                    <td><?php echo $count; ?></td>
                                     <td>
 
 
                                         <img src="<?= $featured_image ?>" height="30" width="30"/>
-                                        <a target="_blank" href="{{url('/')}}/{{$name}}"> <?= $item['name'] ?>
+                                        <a target="_blank" href="<?php echo e(url('/')); ?>/<?php echo e($name); ?>"> <?= $item['name'] ?>
                                         </a>
+                                        <br/>
+                                        <?php echo 'Tk.' . $item['price'];?>✖  <?= $item['qty'] ?>
 
                                     </td>
 
 
 
-                                    <td> {{$sku}} </td>
-                                    <td>   <?= $item['qty'] ?></td>
-                                    <td>  @money($item['price'])  </td>
-                                    <td>  @money($item['subtotal'])     </td>
+                                    <td> <?php echo e($sku); ?> </td>
+
+
+                                    <td>  <?php echo 'Tk.' . $item['subtotal'];?> </td>
 
                                 </tr>
                                 <?php
@@ -192,7 +205,7 @@
                                     <span class="extra bold totalamout"><b>Sub Total</b></span>
                                 </td>
                                 <td class="text-right" style="width:50%">
-                                    <span class="bold totalamout"><b>@money($total)      </b></span>
+                                    <span class="bold totalamout"><b><?php echo 'Tk.' . $total;?>      </b></span>
                                 </td>
                             </tr>
                             <tr>
@@ -201,7 +214,7 @@
                                 </td>
                                 <td class="text-right" style="width:50%">
                                                     <span
-                                                        class="bold totalamout"><b>@money($order->shipping_charge) </b></span>
+                                                        class="bold totalamout"><b><?php echo 'Tk.' . $order->shipping_charge;?> </b></span>
                                 </td>
                             </tr>
                             <tr>
@@ -210,28 +223,30 @@
                                 </td>
                                 <td class="text-right" style="width:50%">
                                                     <span
-                                                        class="bold totalamout"><b>@money($order->order_total) </b></span>
+                                                        class="bold totalamout"><b><?php echo 'Tk.' . $order->order_total;?> </b></span>
                                 </td>
                             </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                <button  style="margin-left: 204px;margin-bottom: 2px;" onclick="window.print()" class="btn btn-success print  d-print-none" id="notPrint"><i class="fa fa-download"></i>DOWNLOAD</button>
             </div>
-<?php } else { ?>
-            <?php if(isset($mobile)) { ?>
-            <div style="
-    font-size: 25px;
-    font-weight: bold;
-        margin-left: 492px;
-
-
-" class="text-danger">There are no order </div>
-
-            <?php } ?>
-            <?php } ?>
         </div>
-        </div>
+        <?php
+        } else {
+        ?><h1 class="error">Invalid Order Request!</h1><?php
+        }
+        ?>
+
+
     </div>
-@endsection
+    </div>
+</div>
+
+
+<?php $__env->stopSection(); ?>
+
+
+
+
+<?php echo $__env->make('website.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\SXampp\htdocs\RakibZaman\resources\views/website/thank_you.blade.php ENDPATH**/ ?>

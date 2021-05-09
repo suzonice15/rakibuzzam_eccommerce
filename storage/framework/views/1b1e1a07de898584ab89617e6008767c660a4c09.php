@@ -13,18 +13,18 @@
             <div class="col-md-6 col-6 col-lg-3   mt-3 lg-ps-5 mt-md-0 mb-0 mb-md-4"><h5 class="text-start ms-3">About
                     Ecommerce</h5>
                 <ul class="list-unstyled foot-desc">
-                    <li class="mb-2"><a href="{{url('/')}}/about-us">About US</a></li>
-                    <li class="mb-2"><a href="{{url('/')}}/contact-us">Contact US</a></li>
-                    <li class="mb-2"><a href="{{url('/')}}/privacy-policy">Privacry Policy</a></li>
+                    <li class="mb-2"><a href="<?php echo e(url('/')); ?>/about-us">About US</a></li>
+                    <li class="mb-2"><a href="<?php echo e(url('/')); ?>/contact-us">Contact US</a></li>
+                    <li class="mb-2"><a href="<?php echo e(url('/')); ?>/privacy-policy">Privacry Policy</a></li>
                 </ul>
             </div>
             <hr class="clearfix w-100 d-md-none">
             <div class="col-lg-2 col-md-6 col-6  mt-3 mt-md-0 mb-0 mb-md-4"><h5 class="text-start ms-3">Customer
                     Care</h5>
                 <ul class="list-unstyled ">
-                    <li class="mb-2"><a href="{{url('/')}}/terms-and-conditions">Terms and Conditions</a></li>
-                    <li class="mb-2"><a href="{{url('/')}}/track-your-order">Track Order</a></li>
-                    <li class="mb-2"><a href="{{url('/')}}/refund-and-returns-policy">Return and Refund Policy</a></li>
+                    <li class="mb-2"><a href="<?php echo e(url('/')); ?>/terms-and-conditions">Terms and Conditions</a></li>
+                    <li class="mb-2"><a href="<?php echo e(url('/')); ?>/track-your-order">Track Order</a></li>
+                    <li class="mb-2"><a href="<?php echo e(url('/')); ?>/refund-and-returns-policy">Return and Refund Policy</a></li>
                 </ul>
             </div>
             <hr class="clearfix w-100 d-md-none">
@@ -95,47 +95,47 @@
          style="background-color:#fff;bottom:0px;position:fixed;color:black">
         <div class="row">
             <div class="col-3">
-                <a href="{{url('/')}}">
+                <a href="<?php echo e(url('/')); ?>">
                 <img class="img-fluid" style="height:20px"
                                     src="https://reactadmin.jncomputerbd.com/favicon.png"><br><span style="color:black">Home</span></a></div>
             <div class="col-3">
-                <a href="{{url('/')}}/cart">
+                <a href="<?php echo e(url('/')); ?>/cart">
                     <i  style="color:black" class="fa fa-cart-arrow-down"></i><br><span style="color:black">Cart<span
                                 class="footer-cart">0</span></span></a></div>
             <div class="col-3">
-                <a href="{{url('/')}}/wishlist">
+                <a href="<?php echo e(url('/')); ?>/wishlist">
                 <i style="color:black" class="ms-2 fa fa-heart"></i><br><span style="color:black">Wishlist <span class="footer-wishlist">0</span></span>
                     </a>
             </div>
             <div class="col-3">
 
 
-                @if(Session::get('customer_id'))
-                    @if(Session::get('picture'))
-                        <a href="{{url('/')}}/customer/dasboard">
+                <?php if(Session::get('customer_id')): ?>
+                    <?php if(Session::get('picture')): ?>
+                        <a href="<?php echo e(url('/')); ?>/customer/dasboard">
                             <img style="border-radius: 50%;
 width: 24px;
 position: absolute;
 top: 0px;
-height: 30px;" class="img-fluid" src="{{url('/')}}/public/uploads/users/{{Session::get('picture')}}">
+height: 30px;" class="img-fluid" src="<?php echo e(url('/')); ?>/public/uploads/users/<?php echo e(Session::get('picture')); ?>">
                         </a>
-                    @else
-                        <a href="{{url('/')}}/customer/dasboard">
+                    <?php else: ?>
+                        <a href="<?php echo e(url('/')); ?>/customer/dasboard">
                             <img style="border-radius: 50%;
 width: 24px;
 position: absolute;
 top: 0px;
-height: 30px;" class="img-fluid" src="{{url('/')}}/public/uploads/user.jpg">
+height: 30px;" class="img-fluid" src="<?php echo e(url('/')); ?>/public/uploads/user.jpg">
                         </a>
-                    @endif
+                    <?php endif; ?>
                     <br>
                     <span>Dasboard</span>
 
-                @else
+                <?php else: ?>
 
-                    <a href="{{url('/')}}/customer/login"><i class="ms-1 fa fa-user"></i><br><span>Account</span></a>
+                    <a href="<?php echo e(url('/')); ?>/customer/login"><i class="ms-1 fa fa-user"></i><br><span>Account</span></a>
 
-                @endif
+                <?php endif; ?>
 
 
             </div>
@@ -148,7 +148,7 @@ height: 30px;" class="img-fluid" src="{{url('/')}}/public/uploads/user.jpg">
         crossorigin="anonymous"></script>
 
 
-<script src="{{ asset('assets/font_end/')}}/js/stellarnav.js"></script>
+<script src="<?php echo e(asset('assets/font_end/')); ?>/js/stellarnav.js"></script>
 
 
 <script>
@@ -169,7 +169,7 @@ height: 30px;" class="img-fluid" src="{{url('/')}}/public/uploads/user.jpg">
 
             jQuery.ajax({
                 type: "GET",
-                url: "{{ url('search_engine/')}}?search_query=" + search_query,
+                url: "<?php echo e(url('search_engine/')); ?>?search_query=" + search_query,
                 success: function (data) {
                     $(".desktop-search-menu").show();
                     jQuery(".desktop-search-menu").html(data.html);
@@ -196,7 +196,7 @@ height: 30px;" class="img-fluid" src="{{url('/')}}/public/uploads/user.jpg">
 
         $.ajax({
             type: "GET",
-            url: "{{url('add-to-wishlist')}}?product_id=" + product_id,
+            url: "<?php echo e(url('add-to-wishlist')); ?>?product_id=" + product_id,
             success: function (data) {
 
                 location.reload();
@@ -221,7 +221,7 @@ height: 30px;" class="img-fluid" src="{{url('/')}}/public/uploads/user.jpg">
 
         $.ajax({
             type: "GET",
-            url: "{{url('add-to-cart')}}?product_id=" + product_id + "&picture=" + picture + "&quntity=" + quntity,
+            url: "<?php echo e(url('add-to-cart')); ?>?product_id=" + product_id + "&picture=" + picture + "&quntity=" + quntity,
 
             success: function (data) {
 
@@ -245,9 +245,9 @@ height: 30px;" class="img-fluid" src="{{url('/')}}/public/uploads/user.jpg">
         }
         $.ajax({
             type: "GET",
-            url: "{{url('add-to-cart')}}?product_id=" + product_id + "&picture=" + picture + "&quntity=" + quntity,
+            url: "<?php echo e(url('add-to-cart')); ?>?product_id=" + product_id + "&picture=" + picture + "&quntity=" + quntity,
             success: function (data) {
-                window.location.assign("{{ url('/') }}/cart")
+                window.location.assign("<?php echo e(url('/')); ?>/cart")
 //                $('body .count').text(data.result.count);
 //                $('body .value').text(data.result.total);
             }
@@ -259,3 +259,4 @@ height: 30px;" class="img-fluid" src="{{url('/')}}/public/uploads/user.jpg">
 
 </body>
 </html>
+<?php /**PATH C:\SXampp\htdocs\RakibZaman\resources\views/website/includes/footer.blade.php ENDPATH**/ ?>

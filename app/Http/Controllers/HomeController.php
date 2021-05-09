@@ -41,7 +41,7 @@ class HomeController extends Controller
             ->where('status','=',1)
             ->whereNotIn('product_stock',[0])
             ->orderBy('product.modified_time','DESC')
-            ->paginate(10);
+            ->paginate(4);
             //dd($data['recentProducts']);
        return view('website.home',$data);
     }
@@ -344,8 +344,6 @@ class HomeController extends Controller
         $view = view('website.search_engine',$data)->render();
         return response()->json(['html'=>$view]);
 
-
-
     }
 
     public  function search(Request $request){
@@ -366,6 +364,13 @@ class HomeController extends Controller
 
 
             return view('website.search', compact('products','search_query'));
+
+    }
+
+    public  function allShop(){
+
+       $data['shops']= DB::table('vendor')->select('vendor_shop','vendor_shop_image','vendor_link')->get();
+        return view('website.allShop', $data);
 
     }
 

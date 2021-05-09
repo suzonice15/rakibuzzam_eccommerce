@@ -1,5 +1,4 @@
-@extends('website.master')
-@section('mainContent')
+<?php $__env->startSection('mainContent'); ?>
 
 
     <?php
@@ -30,18 +29,18 @@
     <div class="container-fluid my-2 px-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+                <li class="breadcrumb-item"><a href="<?php echo e(url('/')); ?>">Home</a></li>
                 <?php if(isset($category_name_first)) { ?>
                 <li class="breadcrumb-item"><a
-                            href="{{url('/category/')}}/{{$category_name_first}}">{{$category_title_first}}</a></li>
+                            href="<?php echo e(url('/category/')); ?>/<?php echo e($category_name_first); ?>"><?php echo e($category_title_first); ?></a></li>
                 <?php } ?>
                 <?php if(isset($category_name_middle)) { ?>
                 <li class="breadcrumb-item"><a
-                            href="{{url('/category/')}}/{{$category_name_middle}}">{{$category_title_middle}}</a></li>
+                            href="<?php echo e(url('/category/')); ?>/<?php echo e($category_name_middle); ?>"><?php echo e($category_title_middle); ?></a></li>
                 <?php } ?>
                 <li class="breadcrumb-item"><a
-                            href="{{url('/category/')}}/{{$category_name_last}}">{{$category_title_last}}</a></li>
-                <li class="breadcrumb-item active">{{$product->product_title}}</li>
+                            href="<?php echo e(url('/category/')); ?>/<?php echo e($category_name_last); ?>"><?php echo e($category_title_last); ?></a></li>
+                <li class="breadcrumb-item active"><?php echo e($product->product_title); ?></li>
             </ol>
         </nav>
 
@@ -54,8 +53,8 @@
             <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 col-xxl-5">
 
                 <div class="card">
-                    <img src="{{ url('/public/uploads') }}/{{ $product->folder }}/{{ $product->feasured_image }}"
-                         class="card-img-top" id="main_picture" alt="{{ $product->product_title }}">
+                    <img src="<?php echo e(url('/public/uploads')); ?>/<?php echo e($product->folder); ?>/<?php echo e($product->feasured_image); ?>"
+                         class="card-img-top" id="main_picture" alt="<?php echo e($product->product_title); ?>">
 
 
 
@@ -68,7 +67,7 @@
 
                     <li>
                         <img class="img-responsive thum_image_hover " width="85"
-                             src="{{ url('/public/uploads') }}/{{ $product->folder }}/{{ $product->feasured_image }}"/>
+                             src="<?php echo e(url('/public/uploads')); ?>/<?php echo e($product->folder); ?>/<?php echo e($product->feasured_image); ?>"/>
 
                     </li>
                     <?php } ?>
@@ -78,7 +77,7 @@
 
                     <li>
                         <img class="  thum_image_hover " width="85" alt=""
-                             src="{{ url('/public/uploads') }}/{{ $product->folder }}/{{ $product->galary_image_1 }}"/>
+                             src="<?php echo e(url('/public/uploads')); ?>/<?php echo e($product->folder); ?>/<?php echo e($product->galary_image_1); ?>"/>
 
                     </li>
                     <?php } ?>
@@ -88,7 +87,7 @@
 
                     <li>
                         <img class="img-responsive thum_image_hover " width="85" alt=""
-                             src="{{ url('/public/uploads') }}/{{ $product->folder }}/{{ $product->galary_image_2 }}"/>
+                             src="<?php echo e(url('/public/uploads')); ?>/<?php echo e($product->folder); ?>/<?php echo e($product->galary_image_2); ?>"/>
 
                     </li>
                     <?php } ?>
@@ -98,7 +97,7 @@
 
                     <li>
                         <img class="img-responsive thum_image_hover " width="85" alt=""
-                             src="{{ url('/public/uploads') }}/{{ $product->folder }}/{{ $product->galary_image_3 }}"/>
+                             src="<?php echo e(url('/public/uploads')); ?>/<?php echo e($product->folder); ?>/<?php echo e($product->galary_image_3); ?>"/>
 
                     </li>
                     <?php } ?>
@@ -108,7 +107,7 @@
 
                     <li>
                         <img class="img-responsive thum_image_hover " width="85" alt=""
-                             src="{{ url('/public/uploads') }}/{{ $product->folder }}/{{ $product->galary_image_4 }}"/>
+                             src="<?php echo e(url('/public/uploads')); ?>/<?php echo e($product->folder); ?>/<?php echo e($product->galary_image_4); ?>"/>
 
                     </li>
                     <?php } ?>
@@ -118,7 +117,7 @@
 
                     <li>
                         <img class="img-responsive thum_image_hover " width="85" alt=""
-                             src="{{ url('/public/uploads') }}/{{ $product->folder }}/{{ $product->galary_image_5 }}"/>
+                             src="<?php echo e(url('/public/uploads')); ?>/<?php echo e($product->folder); ?>/<?php echo e($product->galary_image_5); ?>"/>
 
                     </li>
                     <?php } ?>
@@ -128,7 +127,7 @@
 
                     <li>
                         <img class="img-responsive thum_image_hover " width="85" alt=""
-                             src="{{ url('/public/uploads') }}/{{ $product->folder }}/{{ $product->galary_image_6 }}"/>
+                             src="<?php echo e(url('/public/uploads')); ?>/<?php echo e($product->folder); ?>/<?php echo e($product->galary_image_6); ?>"/>
 
                     </li>
                     <?php } ?>
@@ -145,16 +144,16 @@
                  style="background-color:white;border-radius: 2px;">
 
 
-                <h1 class="single-product-title">{{$product->product_title}}</h1>
-                <p class="product-code">Product Code: {{$product->sku}} </p>
+                <h1 class="single-product-title"><?php echo e($product->product_title); ?></h1>
+                <p class="product-code">Product Code: <?php echo e($product->sku); ?> </p>
 
                 <div class="stock-product">
                     <span style="font-size: 14px;font-weight: bold;" class="label">In Stock  :</span>
-                    <span style="font-weight: bold">{{$product->product_stock}}</span>
+                    <span style="font-weight: bold"><?php echo e($product->product_stock); ?></span>
                     <?php
                     if(isset($shop_link)){
                     ?>
-                    <p class="fw-bold fs-5">Shop : <a href="{{URL::to('shop/'.$shop_link)}}">{{$shop_name}}</a></p>
+                    <p class="fw-bold fs-5">Shop : <a href="<?php echo e(URL::to('shop/'.$shop_link)); ?>"><?php echo e($shop_name); ?></a></p>
                     <?php }?>
 
                 </div>
@@ -165,7 +164,7 @@
 
                 </div>
 
-                @if($product->product_specification)
+                <?php if($product->product_specification): ?>
                     <div class="product-short-description">
                         <p style="margin-bottom: 2px;
 color: black;
@@ -174,7 +173,7 @@ font-weight: normal;">Product Short Description</p>
                         <?php echo $product->product_specification ?>
 
                     </div>
-                @endif
+                <?php endif; ?>
 
                 <div class="single-price">
                     <?php
@@ -185,10 +184,10 @@ font-weight: normal;">Product Short Description</p>
                         $sell_price = $product->product_price;
                     }
                     ?>
-                    <span class="current-price fs-1 fw-bold text-dark"> @money($sell_price)</span>
-                    @if($product->discount_price)
-                        <span class="old-price   fw-bold text-danger fs-4"> <del>@money($product->product_price) </del></span>
-                    @endif
+                    <span class="current-price fs-1 fw-bold text-dark"> <?php echo 'Tk.' . $sell_price;?></span>
+                    <?php if($product->discount_price): ?>
+                        <span class="old-price   fw-bold text-danger fs-4"> <del><?php echo 'Tk.' . $product->product_price;?> </del></span>
+                    <?php endif; ?>
 
 
                 </div>
@@ -214,12 +213,12 @@ font-weight: normal;">Product Short Description</p>
                    </div>
 
                     <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 col-xxl-8">
-   <a data-product_id="{{ $product->product_id}}"  data-picture="{{ url('/public/uploads') }}/{{ $product->folder }}/small/{{ $product->feasured_image}}"
+   <a data-product_id="<?php echo e($product->product_id); ?>"  data-picture="<?php echo e(url('/public/uploads')); ?>/<?php echo e($product->folder); ?>/small/<?php echo e($product->feasured_image); ?>"
                                                              class="btn btn-primary add_to_cart text-white" href="javascript:void(0)"> ADD TO CART</a>
-                                                    <a href="javascript:void(0)" data-product_id="{{ $product->product_id}}"
-                                                       data-picture="{{ url('/public/uploads') }}/{{ $product->folder }}/small/{{ $product->feasured_image}}"
+                                                    <a href="javascript:void(0)" data-product_id="<?php echo e($product->product_id); ?>"
+                                                       data-picture="<?php echo e(url('/public/uploads')); ?>/<?php echo e($product->folder); ?>/small/<?php echo e($product->feasured_image); ?>"
                                                         class="btn btn-success buy-now-cart text-white"> BUY NOW </a>
-                                                    <button data-product_id="{{ $product->product_id}}"  class="btn btn-success add-to-wishlist icon" data-toggle="dropdown" type="button" >
+                                                    <button data-product_id="<?php echo e($product->product_id); ?>"  class="btn btn-success add-to-wishlist icon" data-toggle="dropdown" type="button" >
                                                         <i class="icon fa fa-heart"></i>
                                                     </button>
                                                 
@@ -347,7 +346,7 @@ font-weight: normal;">Product Short Description</p>
 
             $.ajax({
 
-                url: "{{url('related/product')}}?product_id=" + product_id,
+                url: "<?php echo e(url('related/product')); ?>?product_id=" + product_id,
                 method: "get",
                 success: function (data) {
 
@@ -394,4 +393,6 @@ font-weight: normal;">Product Short Description</p>
 
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('website.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\SXampp\htdocs\RakibZaman\resources\views/website/product.blade.php ENDPATH**/ ?>

@@ -1,21 +1,22 @@
-@extends('website.master')
-@section('mainContent')
+
+<?php $__env->startSection('mainContent'); ?>
 
 <div class="container">
     <div id="loginbox"  style="margin-top:80px;background: white;
 padding: 58px 5px;" class="mainbox col-12 d-flex justify-content-center ">
          <div class="form-group mb-3">
-            @if(Session::has('success'))
+            <?php if(Session::has('success')): ?>
                 <div class="alert alert-success">
                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    {{ Session::get('success') }}
-                    @php
+                    <?php echo e(Session::get('success')); ?>
+
+                    <?php
                         Session::forget('success');
-                    @endphp
+                    ?>
                 </div>
-            @endif
+            <?php endif; ?>
         </div>
 
 
@@ -29,23 +30,24 @@ padding: 58px 5px;" class="mainbox col-12 d-flex justify-content-center ">
 
                 <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
 
-                @if(Session::has('error'))
+                <?php if(Session::has('error')): ?>
                     <div class="alert alert-danger">
 
-                        {{ Session::get('error') }}
-                        @php
+                        <?php echo e(Session::get('error')); ?>
+
+                        <?php
                         Session::forget('error');
-                        @endphp
+                        ?>
                     </div>
-                @endif
-                <form  action="{{url('/')}}/vendor/forgot-password" method="post"  >
+                <?php endif; ?>
+                <form  action="<?php echo e(url('/')); ?>/vendor/forgot-password" method="post"  >
 
                     <h5 id="fadeout" style="color:red;text-aling:center"><?php
 
 
                     if(isset($error)) { echo  $error;} ?></h5>
 
-                    @csrf
+                    <?php echo csrf_field(); ?>
                     <div style="margin-bottom: 25px" class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                         <input id="login-username" type="text" class="form-control" name="vendor_email" value="" placeholder="Enter Your Email">
@@ -65,5 +67,7 @@ padding: 58px 5px;" class="mainbox col-12 d-flex justify-content-center ">
     </div>
    </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
 
+
+<?php echo $__env->make('website.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\SXampp\htdocs\RakibZaman\resources\views/website/vendor/forget_password.blade.php ENDPATH**/ ?>

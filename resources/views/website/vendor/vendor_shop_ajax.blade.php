@@ -1,64 +1,46 @@
-@if($products)
-    @foreach($products as $product)
 
-        <?php
-        if ($product->discount_price) {
-            $sell_price = $product->discount_price;
-        } else {
-            $sell_price = $product->product_price;
-        }
-        ?>
+<div class="row px-2">
 
-        <div class="col-xs-6 col-sm-6 col-md-2 wow ">
-            <div class="products">
-                <div class="product">
-                    <div class="product-image">
-                        <div class="image">
-                            <a href="{{ url('') }}/{{$product->product_name}}">
-                                <img
-                                    src="{{ url('/public/uploads') }}/{{ $product->folder }}/thumb/{{ $product->feasured_image }}"
-                                    alt="">
-                            </a>
-                        </div>
+    @if($products)
+        @foreach($products as $product)
 
-
-                    </div>
-                    <div class="product-info text-left">
-                        <div class="product-price">
-                                <span class="price">
-
-
-                                  @money($sell_price)
-                                </span>
+            <?php
+            if ($product->discount_price) {
+                $sell_price = $product->discount_price;
+            } else {
+                $sell_price = $product->product_price;
+            }
+            ?>
+            <div class="col-md-2 col-lg-2 col-sm-6 col-6 p-1">
+                <div class="card ">
+                    <div class="box">
+                        <a  href="{{ url('/') }}/{{$product->product_name}}" > <img src="{{ url('/public/uploads') }}/{{ $product->folder }}/thumb/{{ $product->feasured_image }}" alt="{{$product->product_title}}">
+                        </a> </div>
+                    <div class="card-body">
+                        <p class="product-title"><a  href="{{ url('/') }}/{{$product->product_name}}" >{{$product->product_title}} </a></p>
+                        <div class="text-center price ">
                             <?php
                             if($product->discount_price){
 
 
                             ?>
-                            <span class="price-before-discount"
-                                  style="color:red">  @money($product->product_price) </span>
+                            <p> @money($product->product_price)</p>
 
                             <?php
 
 
                             }
                             ?>
+                            <p> @money($sell_price)</p>
                         </div>
-                         <h3 style="margin-top: 2px;margin-bottom: -2px;"   class="name">
-                            <a href="{{ url('') }}/{{$product->product_name}}">
-
-                                {{ $product->product_title }}
-                            </a>
-                        </h3>
-
 
                     </div>
-                    
-
-
                 </div>
             </div>
-        </div>
 
-    @endforeach
-@endif
+
+
+        @endforeach
+    @endif
+
+</div>

@@ -29,8 +29,8 @@
     <link rel="shortcut icon" href="<?=get_option('icon')?>">
     <!-- Bootstrap Core CSS -->
     <!-- Customizable CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/font_end/')}}/css/style.css">
-    <link rel="stylesheet" href="{{ asset('assets/font_end/')}}/css/stellarnav.css">
+    <link rel="stylesheet" href="<?php echo e(asset('assets/font_end/')); ?>/css/style.css">
+    <link rel="stylesheet" href="<?php echo e(asset('assets/font_end/')); ?>/css/stellarnav.css">
 
 
     <meta name="title" content="<?php if (isset($seo_title)) {
@@ -43,16 +43,16 @@
         echo $seo_description;
     }?>"/>
 
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
-    <meta name="_base_url" content="{{ url('/') }}">
+    <meta name="_base_url" content="<?php echo e(url('/')); ?>">
 
     <meta name="robots" content="index,follow"/>
 
 
-    <link rel="canonical" href="{{url()->current()}}"/>
+    <link rel="canonical" href="<?php echo e(url()->current()); ?>"/>
     <meta property="og:locale" content="EN"/>
-    <meta property="og:url" content="{{url()->current()}}"/>
+    <meta property="og:url" content="<?php echo e(url()->current()); ?>"/>
     <meta property="og:type" content="<?php if (isset($seo_description)) {
         echo $seo_description;
     }?>"/>
@@ -94,12 +94,12 @@
     <div class="container-fluid desktop-header d-none d-lg-block d-xl-block d-xxl-block">
         <div class="row px-5 pt-3 pb-3" style="border-bottom: 1px solid #9c9a9a;">
             <div class="col-md-2 col-lg-2 col-xl-2 col-xxl-2 d-none d-lg-block d-xl-block d-xxl-block">
-                <a href="{{url('/')}}"> <img class="img-fluid logo-image"
+                <a href="<?php echo e(url('/')); ?>"> <img class="img-fluid logo-image"
                                              src="https://bdeshishop.com/_nuxt/img/Logo-gif.07de684.gif"></a>
 
             </div>
             <div class="col-8 col-lg-8 col-xl-8 col-xxl-8">
-                <form action="{{ url('search') }}" method="get">
+                <form action="<?php echo e(url('search')); ?>" method="get">
                     <div class="input-group">
 
                         <input type="text" name="search" required  class="form-control searchbox desktop-search-field"
@@ -121,41 +121,41 @@
             </div>
             <div class="col-lg-2 col-xl-2 col-xxl-2 d-none d-lg-block d-xl-block d-xxl-block">
                 <div class="d-flex justify-content-center mt-2">
-                    <a href="{{url('/')}}/wishlist" class="me-3"> <i class="fs-5 fw-bold far fa-heart"></i>
+                    <a href="<?php echo e(url('/')); ?>/wishlist" class="me-3"> <i class="fs-5 fw-bold far fa-heart"></i>
 
-                        @if(Session::get('total_wishlist_count')>0)
-                            <span id="cart_count">{{Session::get('total_wishlist_count')}}</span>
-                        @endif
+                        <?php if(Session::get('total_wishlist_count')>0): ?>
+                            <span id="cart_count"><?php echo e(Session::get('total_wishlist_count')); ?></span>
+                        <?php endif; ?>
                     </a>
-                    <a href="{{url('/')}}/cart" class="me-3">
+                    <a href="<?php echo e(url('/')); ?>/cart" class="me-3">
                         <i class="fs-5 fw-bold far fa-cart-plus"></i>
-                        @if(Session::get('total_cart_count')>0)
-                            <span id="cart_count">{{Session::get('total_cart_count')}}</span>
-                        @endif
+                        <?php if(Session::get('total_cart_count')>0): ?>
+                            <span id="cart_count"><?php echo e(Session::get('total_cart_count')); ?></span>
+                        <?php endif; ?>
 
                     </a>
-                    @if(Session::get('customer_id'))
+                    <?php if(Session::get('customer_id')): ?>
 
-                        <a href="{{url('/')}}/customer/dasboard" class="me-3">
+                        <a href="<?php echo e(url('/')); ?>/customer/dasboard" class="me-3">
 
                             <?php
                             $picture=Session::get('picture');
                             if($picture){
                             ?>
-                            <img   style="border-radius: 50%;width: 29px;position: absolute;top: 14px;height: 37px;"   class="img-fluid"  src="{{url('/')}}/public/uploads/users/{{$picture}}">
+                            <img   style="border-radius: 50%;width: 29px;position: absolute;top: 14px;height: 37px;"   class="img-fluid"  src="<?php echo e(url('/')); ?>/public/uploads/users/<?php echo e($picture); ?>">
                             <?php } else { ?>
-                            <img  style="border-radius: 50%;width: 29px;position: absolute;top: 14px;height: 37px;"   class="img-fluid"  src="{{url('/')}}/public/uploads/user.jpg">
+                            <img  style="border-radius: 50%;width: 29px;position: absolute;top: 14px;height: 37px;"   class="img-fluid"  src="<?php echo e(url('/')); ?>/public/uploads/user.jpg">
 
                             <?php } ?>
 
                         </a>
 
 
-                    @else
+                    <?php else: ?>
 
-                    <a href="{{url('/')}}/customer/login" class="me-3"> <i class="fs-5 fw-bold fal fa-user"></i></a>
+                    <a href="<?php echo e(url('/')); ?>/customer/login" class="me-3"> <i class="fs-5 fw-bold fal fa-user"></i></a>
 
-                        @endif
+                        <?php endif; ?>
 
 
                 </div>
@@ -174,7 +174,7 @@
 
             </div>
             <div class="col-11">
-                <form action="{{ url('search') }}" method="get">
+                <form action="<?php echo e(url('search')); ?>" method="get">
 
                 <div class="input-group">
                     <input type="text" required class="form-control searchbox desktop-search-field" placeholder="Search Product">
@@ -199,7 +199,7 @@
             <ul>
 
 
-                <li><a href="{{url('/all-products')}}">All Products</a></li>
+                <li><a href="<?php echo e(url('/all-products')); ?>">All Products</a></li>
 
                 <?php
 
@@ -222,7 +222,7 @@
 
 
                 ?>
-                <li><a href="{{url('/category')}}/{{$first->category_name}}">{{$first->category_title}}</a>
+                <li><a href="<?php echo e(url('/category')); ?>/<?php echo e($first->category_name); ?>"><?php echo e($first->category_title); ?></a>
                     <ul>
                         <?php foreach ($secondCategories as $second){
 
@@ -231,17 +231,17 @@
                         if(count($thirdCategories) > 0){
                         ?>
 
-                        <li><a href="#">{{$second->category_title}}</a>
+                        <li><a href="#"><?php echo e($second->category_title); ?></a>
                             <ul>
                                 <?php foreach ($thirdCategories as $third) {?>
-                                <li><a href="{{url('/category')}}/{{$third->category_name}}">{{$third->category_title}}</a>
+                                <li><a href="<?php echo e(url('/category')); ?>/<?php echo e($third->category_name); ?>"><?php echo e($third->category_title); ?></a>
                                 </li>
                                 <?php } ?>
 
                             </ul>
                         </li>
                         <?php } else { ?>
-                        <li><a href="{{url('/category')}}/{{$second->category_name}}">{{$second->category_title}}</a></li>
+                        <li><a href="<?php echo e(url('/category')); ?>/<?php echo e($second->category_name); ?>"><?php echo e($second->category_title); ?></a></li>
 
 
                         <?php } }?>
@@ -252,7 +252,7 @@
 
                 <?php } else { ?>
 
-                <li><a href="{{url('/category')}}/{{$first->category_name}}">{{$first->category_title}}</a></li>
+                <li><a href="<?php echo e(url('/category')); ?>/<?php echo e($first->category_name); ?>"><?php echo e($first->category_title); ?></a></li>
 
                 <?php
                 }
@@ -313,7 +313,7 @@ position: absolute;display: none">
 
                         ?>
                         <li class="">
-                            <a href="{{url('/category')}}/{{$first->category_name}}">{{$first->category_title}} </a>
+                            <a href="<?php echo e(url('/category')); ?>/<?php echo e($first->category_name); ?>"><?php echo e($first->category_title); ?> </a>
                             <span class="right-main-menu-icon"><i class="fa fa-angle-right"></i></span>
 
 
@@ -330,21 +330,21 @@ position: absolute;display: none">
 
                                 <li class="">
 
-                                    <a href="{{url('/category')}}/{{$second->category_name}}">{{$second->category_title}} </a>
+                                    <a href="<?php echo e(url('/category')); ?>/<?php echo e($second->category_name); ?>"><?php echo e($second->category_title); ?> </a>
                                     <span class="right-main-menu-icon"><i class="fa fa-angle-right"></i></span>
 
 
                                     <ul class="sub-sub-menu-ul">
 
 
-                                        @foreach($thirdCategories as $thirdCategory)
+                                        <?php $__currentLoopData = $thirdCategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $thirdCategory): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <li class="">
 
-                                                <a href="{{url('/category')}}/{{$thirdCategory->category_name}}">{{$thirdCategory->category_title}}</a>
+                                                <a href="<?php echo e(url('/category')); ?>/<?php echo e($thirdCategory->category_name); ?>"><?php echo e($thirdCategory->category_title); ?></a>
 
                                             </li>
 
-                                        @endforeach
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
                                     </ul>
@@ -352,7 +352,7 @@ position: absolute;display: none">
 
                                 </li> <?php }  else { ?>
                                 <li class="">
-                                    <a href="{{url('/category')}}/{{$second->category_name}}"> {{$second->category_title}}</a>
+                                    <a href="<?php echo e(url('/category')); ?>/<?php echo e($second->category_name); ?>"> <?php echo e($second->category_title); ?></a>
                                 </li>
 
                                 <?php } } ?>
@@ -366,7 +366,7 @@ position: absolute;display: none">
 
 
                         <li class=""><a
-                                    href="{{url('/category')}}/{{$first->category_name}}">{{$first->category_title}}</a>
+                                    href="<?php echo e(url('/category')); ?>/<?php echo e($first->category_name); ?>"><?php echo e($first->category_title); ?></a>
                         </li>
                         <?php
 
@@ -383,15 +383,16 @@ position: absolute;display: none">
 
             </div>
             <div class="col-md-9 col-sm-10 col-xl-9 col-xxl-9 col-lg-9 ">
-                <a href="{{url('/')}}/all-products" class="ms-5 mt-5 all-shop"> All Product</a>
-                <a href="{{url('/')}}/shops" class="ms-5 mt-5 all-shop"> All Shops</a>
-                 <a href="{{url('/')}}/track-your-order" class="ms-5 mt-5 all-shop"> Track My Order</a>
-                <a href="{{url('/')}}/faq" class="ms-5 mt-5 all-shop"> FAQ</a>
-                <a href="{{url('/')}}/vendor/login" class="ms-5 mt-5 all-shop"> Vendor</a>
+                <a href="<?php echo e(url('/')); ?>/all-products" class="ms-5 mt-5 all-shop"> All Product</a>
+                <a href="<?php echo e(url('/')); ?>/shops" class="ms-5 mt-5 all-shop"> All Shops</a>
+                 <a href="<?php echo e(url('/')); ?>/track-your-order" class="ms-5 mt-5 all-shop"> Track My Order</a>
+                <a href="<?php echo e(url('/')); ?>/faq" class="ms-5 mt-5 all-shop"> FAQ</a>
+                <a href="<?php echo e(url('/')); ?>/vendor/login" class="ms-5 mt-5 all-shop"> Vendor</a>
                 <a href="https://affiliate.com" class="ms-5 mt-5 all-shop"> Affiliate </a>
-                <a href="{{url('/')}}/help" class="ms-5 mt-5 all-shop"> Help</a>
+                <a href="<?php echo e(url('/')); ?>/help" class="ms-5 mt-5 all-shop"> Help</a>
              </div>
         </div>
     </div>
 </header>
 
+<?php /**PATH C:\SXampp\htdocs\RakibZaman\resources\views/website/includes/header.blade.php ENDPATH**/ ?>

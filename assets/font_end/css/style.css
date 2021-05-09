@@ -209,7 +209,10 @@ font-weight: 400;
   display:block
  }
 
- 
+ .card.box:hover img{
+     background: red;
+     padding: 5px;
+ }
 .slider_part{
     margin-top: 25px;
 }
@@ -294,7 +297,32 @@ font-weight: 400;
   transition: .5s;
   padding: 10px;
 }
-
+.footer-wishlist{
+    position: absolute;
+    top: -9px;
+    background: red;
+    width: 17px;
+    height: 20px;
+    border-radius: 50%;
+    padding-top: -3px;
+    margin-left: -27px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+.footer-cart{
+    position: absolute;
+    top: -9px;
+    background: red;
+    width: 17px;
+    height: 20px;
+    border-radius: 50%;
+    padding-top: -3px;
+    margin-left: -20px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
 .footer-section a{text-decoration: none;color:white !important;font-weight: normal;}
   .footer-section .social{list-style: none;
     display: flex;

@@ -1,7 +1,6 @@
-@extends('website.master')
-@section('mainContent')
+<?php $__env->startSection('mainContent'); ?>
 <style type="text/css">
-    @media print {
+    @media  print {
   body * {
     visibility: hidden;
   }
@@ -31,7 +30,7 @@
                     <div class="container">
                         <div class="breadcrumb-inner">
                             <ul class="list-inline list-unstyled">
-                                <li><a href="{{url('/')}}">Home</a></li>
+                                <li><a href="<?php echo e(url('/')); ?>">Home</a></li>
                                 <li style="display: initial;" class='active'>অর্ডার ট্র্যাক করুন</li>
                             </ul>
                         </div>
@@ -44,8 +43,8 @@
                         ২। আপনার অর্ডার করা পণ্যের ডেলিভারীর বর্তমান অবস্থা জানতে নিম্নের “টেক্সট বক্স” এ Mobile নাম্বার
                         টি প্রদান করুন এবং “ট্র্যাক অর্ডার” বাটনে ক্লিক করুন।</p>
                     <hr class="break break30">
-                    <form method="post" action="{{ url('/track-your-order') }}">
-                        @csrf
+                    <form method="post" action="<?php echo e(url('/track-your-order')); ?>">
+                        <?php echo csrf_field(); ?>
                         <div class="row row5" style="margin-left: -15px;height: 55px;">
                             <div class="col-sm-8 col-xs-12">
                                 <div class="form-group">
@@ -166,17 +165,17 @@
 
 
                                         <img src="<?= $featured_image ?>" height="30" width="30"/>
-                                        <a target="_blank" href="{{url('/')}}/{{$name}}"> <?= $item['name'] ?>
+                                        <a target="_blank" href="<?php echo e(url('/')); ?>/<?php echo e($name); ?>"> <?= $item['name'] ?>
                                         </a>
 
                                     </td>
 
 
 
-                                    <td> {{$sku}} </td>
+                                    <td> <?php echo e($sku); ?> </td>
                                     <td>   <?= $item['qty'] ?></td>
-                                    <td>  @money($item['price'])  </td>
-                                    <td>  @money($item['subtotal'])     </td>
+                                    <td>  <?php echo 'Tk.' . $item['price'];?>  </td>
+                                    <td>  <?php echo 'Tk.' . $item['subtotal'];?>     </td>
 
                                 </tr>
                                 <?php
@@ -192,7 +191,7 @@
                                     <span class="extra bold totalamout"><b>Sub Total</b></span>
                                 </td>
                                 <td class="text-right" style="width:50%">
-                                    <span class="bold totalamout"><b>@money($total)      </b></span>
+                                    <span class="bold totalamout"><b><?php echo 'Tk.' . $total;?>      </b></span>
                                 </td>
                             </tr>
                             <tr>
@@ -201,7 +200,7 @@
                                 </td>
                                 <td class="text-right" style="width:50%">
                                                     <span
-                                                        class="bold totalamout"><b>@money($order->shipping_charge) </b></span>
+                                                        class="bold totalamout"><b><?php echo 'Tk.' . $order->shipping_charge;?> </b></span>
                                 </td>
                             </tr>
                             <tr>
@@ -210,7 +209,7 @@
                                 </td>
                                 <td class="text-right" style="width:50%">
                                                     <span
-                                                        class="bold totalamout"><b>@money($order->order_total) </b></span>
+                                                        class="bold totalamout"><b><?php echo 'Tk.' . $order->order_total;?> </b></span>
                                 </td>
                             </tr>
                             </tbody>
@@ -234,4 +233,6 @@
         </div>
         </div>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('website.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\SXampp\htdocs\RakibZaman\resources\views/website/track_order_page.blade.php ENDPATH**/ ?>

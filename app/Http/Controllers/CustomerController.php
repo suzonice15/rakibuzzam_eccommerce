@@ -61,6 +61,9 @@ class CustomerController extends Controller
     public function sign_up_form()
     {
 
+        if(Session::get('customer_id')){
+            return redirect('customer/dasboard');
+        }
         $data['seo_title']=get_option('home_seo_title');
         $data['seo_keywords']=get_option('home_seo_keywords');
         $data['seo_description']=get_option('home_seo_content');
@@ -69,6 +72,11 @@ class CustomerController extends Controller
     }
 
     public  function login(){
+
+        if(Session::get('customer_id')){
+            return redirect('customer/dasboard');
+        }
+
         $data['seo_title']=get_option('home_seo_title');
         $data['seo_keywords']=get_option('home_seo_keywords');
         $data['seo_description']=get_option('home_seo_content');
@@ -95,6 +103,7 @@ class CustomerController extends Controller
             Session::put('phone', $result->phone);
             Session::put('email', $result->email);
             Session::put('address', $result->address);
+            Session::put('picture', $result->picture);
 
                 return redirect('/');
 
@@ -230,6 +239,7 @@ class CustomerController extends Controller
 
 
             $data['picture'] = $image_name;
+            Session::put('picture',$image_name);
         }
 
 

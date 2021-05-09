@@ -63,7 +63,8 @@ public function shop($vendor_link){
         ->join('vendor','vendor.vendor_id','=','product.vendor_id')
         ->where('vendor_link',$vendor_link)->where('product.status','!=',0)
         ->orderBy('modified_time','DESC')->paginate(18);
-  $data['vendor_link']=$vendor_link;
+ 
+      $data['vendor_link']=$vendor_link;
 
     $data['seo_title']=get_option('home_seo_title');
     $data['seo_keywords']=get_option('home_seo_keywords');

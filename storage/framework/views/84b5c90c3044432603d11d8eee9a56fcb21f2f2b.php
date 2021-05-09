@@ -1,5 +1,4 @@
-@extends('website.master')
-@section('mainContent')
+<?php $__env->startSection('mainContent'); ?>
 
 
     <div class="container-fluid ">
@@ -26,7 +25,7 @@
 
                     ?>
                     <li class="">
-                        <a href="{{url('/category')}}/{{$first->category_name}}">{{$first->category_title}} </a>
+                        <a href="<?php echo e(url('/category')); ?>/<?php echo e($first->category_name); ?>"><?php echo e($first->category_title); ?> </a>
                         <span class="right-main-menu-icon"><i class="fa fa-angle-right"></i></span>
 
 
@@ -43,21 +42,21 @@
 
                             <li class="">
 
-                                <a href="{{url('/category')}}/{{$second->category_name}}">{{$second->category_title}} </a>
+                                <a href="<?php echo e(url('/category')); ?>/<?php echo e($second->category_name); ?>"><?php echo e($second->category_title); ?> </a>
                                 <span class="right-main-menu-icon"><i class="fa fa-angle-right"></i></span>
 
 
                                 <ul class="sub-sub-menu-ul">
 
 
-                                    @foreach($thirdCategories as $thirdCategory)
+                                    <?php $__currentLoopData = $thirdCategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $thirdCategory): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <li class="">
 
-                                            <a href="{{url('/category')}}/{{$thirdCategory->category_name}}">{{$thirdCategory->category_title}}</a>
+                                            <a href="<?php echo e(url('/category')); ?>/<?php echo e($thirdCategory->category_name); ?>"><?php echo e($thirdCategory->category_title); ?></a>
 
                                         </li>
 
-                                    @endforeach
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
                                 </ul>
@@ -65,7 +64,7 @@
 
                             </li> <?php }  else { ?>
                             <li class="">
-                                <a href="{{url('/category')}}/{{$second->category_name}}"> {{$second->category_title}}</a>
+                                <a href="<?php echo e(url('/category')); ?>/<?php echo e($second->category_name); ?>"> <?php echo e($second->category_title); ?></a>
                             </li>
 
                             <?php } } ?>
@@ -79,7 +78,7 @@
 
 
                     <li class=""><a
-                                href="{{url('/category')}}/{{$first->category_name}}">{{$first->category_title}}</a>
+                                href="<?php echo e(url('/category')); ?>/<?php echo e($first->category_name); ?>"><?php echo e($first->category_title); ?></a>
                     </li>
                     <?php
 
@@ -102,30 +101,30 @@
                                 <div class="carousel-indicators">
 
                                     <?php $count =-1;?>
-                                    @if($sliders)
-                                        @foreach($sliders as $key=>$slider)
+                                    <?php if($sliders): ?>
+                                        <?php $__currentLoopData = $sliders; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key=>$slider): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
                                             <?php $count++;?>
 
                                             <button type="button" data-bs-target="#carouselExampleDark"
-                                                    data-bs-slide-to="{{$count}}" <?php if($count==1) { echo 'class=active';} ?>
+                                                    data-bs-slide-to="<?php echo e($count); ?>" <?php if($count==1) { echo 'class=active';} ?>
                                                     aria-current="true" aria-label="Slide 1"></button>
-                                        @endforeach
-                                    @endif
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    <?php endif; ?>
                                 </div>
                                 <div class="carousel-inner">
 
-                                    @if($sliders)
-                                        @foreach($sliders as $slider)
+                                    <?php if($sliders): ?>
+                                        <?php $__currentLoopData = $sliders; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $slider): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
                                             <div class="carousel-item active" data-bs-interval="10000">
-                                                <img src="{{ url('public/uploads/sliders')}}/{{$slider->homeslider_picture}}"
+                                                <img src="<?php echo e(url('public/uploads/sliders')); ?>/<?php echo e($slider->homeslider_picture); ?>"
                                                      class="d-block w-100 img" alt="...">
 
                                             </div>
 
-                                        @endforeach
-                                    @endif
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    <?php endif; ?>
 
 
                                 </div>
@@ -151,8 +150,8 @@
                     <div class="col-12  col-lg-12 col-xl-12 py-3">
                         <div class="row">
 
-                   @if($recentProducts)
-                       @foreach($recentProducts as $product)
+                   <?php if($recentProducts): ?>
+                       <?php $__currentLoopData = $recentProducts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
                                     <?php
 
@@ -166,24 +165,24 @@
                                         <div class="col-md-6 col-lg-3 col-sm-6 col-6 col-xl-3 p-1">
                                             <div class="card ">
                                                 <div class="box">
-                                                    <a  href="{{ url('/') }}/{{$product->product_name}}" > <img src="{{ url('/public/uploads') }}/{{ $product->folder }}/thumb/{{ $product->feasured_image }}" alt="{{$product->product_title}}">
+                                                    <a  href="<?php echo e(url('/')); ?>/<?php echo e($product->product_name); ?>" > <img src="<?php echo e(url('/public/uploads')); ?>/<?php echo e($product->folder); ?>/thumb/<?php echo e($product->feasured_image); ?>" alt="<?php echo e($product->product_title); ?>">
                                                     </a> </div>
                                                 <div class="card-body">
-                                                    <p class="product-title"><a  href="{{ url('/') }}/{{$product->product_name}}" >{{$product->product_title}} </a></p>
+                                                    <p class="product-title"><a  href="<?php echo e(url('/')); ?>/<?php echo e($product->product_name); ?>" ><?php echo e($product->product_title); ?> </a></p>
                                                     <div class="text-center price ">
                                                         <?php
                                                         if($product->discount_price){
 
 
                                                         ?>
-                                                        <p> @money($product->product_price)</p>
+                                                        <p> <?php echo 'Tk.' . $product->product_price;?></p>
 
                                                         <?php
 
 
                                                         }
                                                         ?>
-                                                        <p> @money($sell_price)</p>
+                                                        <p> <?php echo 'Tk.' . $sell_price;?></p>
                                                     </div>
 
                                                 </div>
@@ -192,8 +191,8 @@
 
 
 
-                                @endforeach
-                       @endif
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                       <?php endif; ?>
 
 
 
@@ -225,7 +224,7 @@
         jQuery.ajax(
                 {
 
-                    url: "{{url('/home_page_category_ajax')}}",
+                    url: "<?php echo e(url('/home_page_category_ajax')); ?>",
 
                     type: "get",
 
@@ -274,4 +273,6 @@
     </script>
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('website.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\SXampp\htdocs\RakibZaman\resources\views/website/home.blade.php ENDPATH**/ ?>

@@ -1,5 +1,4 @@
-@extends('website.master')
-@section('mainContent')
+<?php $__env->startSection('mainContent'); ?>
 
     <style>
         .vertical-menu {
@@ -37,7 +36,7 @@
 
 
 
-                    @include('website.customer.sidebar')
+                    <?php echo $__env->make('website.customer.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 
             </div>
@@ -45,7 +44,7 @@
 
             <div class="col-md-12 col-12 col-sm-12 col-lg-9 col-xl-9 col-xxl-9">
 
-                @yield('profile_master')
+                <?php echo $__env->yieldContent('profile_master'); ?>
 
 
             </div>
@@ -58,5 +57,7 @@
 
 
 
-@endsection
+<?php $__env->stopSection(); ?>
 
+
+<?php echo $__env->make('website.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\SXampp\htdocs\RakibZaman\resources\views/website/customer/dashboard.blade.php ENDPATH**/ ?>
